@@ -179,6 +179,12 @@ test('country() returns a random (long) country name', t => {
     })
 })
 
+test('country() returns a random (3-letter) country name', t => {
+    _.times(1000, () => {
+        t.is(chance.country({ alpha3: true }).length, 3)
+    })
+})
+
 // chance.county()
 test('county() returns a random county name', t => {
     _.times(1000, () => {
